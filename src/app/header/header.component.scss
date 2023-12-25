@@ -1,0 +1,18 @@
+img {
+    width: 175px;
+    object-fit: cover;
+}
+
+a {
+    font-family: Poppins;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+}
+
+.navBar-container{
+    display: flex;
+    gap: 29px;
+}
