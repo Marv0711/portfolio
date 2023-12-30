@@ -1,0 +1,62 @@
+.footer-div {
+    border-top: 4px solid var(--Style-1-Syle-1-a---green-purple-Green, #70E61C);
+    background: var(--Style-1-Syle-1-a---green-purple-Blue-bg, #141D2F);
+    height: 291px;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logo {
+    width: 180px;
+    height: 40.142px;
+}
+
+.logos-text-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.text {
+    color: var(--White, #FFF);
+    font-family: Poppins;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.social-media-container{
+    display: flex;
+    width: 174px;
+    height: 40px;
+    align-items: center;
+    gap: 42px;
+    flex-shrink: 0;
+}
+
+.impressum-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.impressum{
+    width: 180px;
+    display: inline-flex;
+    padding: 5px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    text-decoration: none;
+
+    color: var(--White, #FFF);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; 
+}
