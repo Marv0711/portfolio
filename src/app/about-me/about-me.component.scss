@@ -13,6 +13,13 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 100px;
+
+    a{
+        &:hover{
+            transform: scale(1.5);
+            transition-duration: 250ms;
+        }
+    }
 }
 
 .scroll-down-container {
@@ -54,6 +61,8 @@
     font-size: 23px;
     font-style: normal;
     font-weight: 400;
+    text-decoration: none;
+    transform: none !important;
 }
 
 .about-me-text-img{

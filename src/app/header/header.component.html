@@ -2,7 +2,7 @@
     <a [routerLink]="['']"><img src="/assets/img/logo.png" alt=""></a> 
 </div>
 <div class="navBar-container">
-    <a href="">About me</a>
-    <a href="">Skills</a>
-    <a href="">Portfolio</a>
+    <a (click)="activButton($event)" href="#aboutMe">About me</a>
+    <a (click)="activButton($event)" href="#skills">Skills</a>
+    <a (click)="activButton($event)" href="#portfolio">Portfolio</a>
 </div>

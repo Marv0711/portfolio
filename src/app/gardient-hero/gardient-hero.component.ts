@@ -9,5 +9,9 @@ import { HeaderComponent } from "../header/header.component";
     imports: [HeaderComponent]
 })
 export class GardientHeroComponent {
-
+    
+    toContact(){
+        window.location.href = window.location.pathname + '#contact';
+    }
 }
+

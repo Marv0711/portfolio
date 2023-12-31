@@ -10,9 +10,20 @@ a {
     font-weight: 400;
     color: white;
     text-decoration: none;
+
+    &:hover{
+        color: #70E61C;
+    }
 }
 
 .navBar-container{
     display: flex;
     gap: 29px;
+}
+
+.activ-button{
+    color: #70E61C;
+    text-decoration: underline #9747FF;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 3px;
 }

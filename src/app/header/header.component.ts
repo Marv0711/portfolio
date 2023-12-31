@@ -10,4 +10,17 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent {
 
+  activButton(button: MouseEvent){
+    debugger
+    let oldButton = document.querySelectorAll('.activ-button');
+
+    if(oldButton){
+      oldButton.forEach((element) => {
+        element.classList.remove('activ-button');
+      });
+    }
+
+    let activButton = button.target as HTMLElement;
+    activButton?.classList.add('activ-button')
+  }
 }
