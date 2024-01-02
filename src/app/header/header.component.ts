@@ -11,7 +11,6 @@ import { RouterModule } from '@angular/router';
 export class HeaderComponent {
 
   activButton(button: MouseEvent){
-    debugger
     let oldButton = document.querySelectorAll('.activ-button');
 
     if(oldButton){

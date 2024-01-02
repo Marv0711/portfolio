@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './my-projects.component.scss'
 })
 export class MyProjectsComponent {
-
+  
+  openWeb(projectLink:string){
+    window.open(projectLink, '_blank');
+  }
 }

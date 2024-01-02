@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { HeaderComponent } from "../header/header.component";
+@Injectable({
+    providedIn: 'root'
+  })
 
 @Component({
     selector: 'app-gardient-hero',
@@ -10,7 +13,7 @@ import { HeaderComponent } from "../header/header.component";
 })
 export class GardientHeroComponent {
     
-    toContact(){
+    public toContact(){
         window.location.href = window.location.pathname + '#contact';
     }
 }

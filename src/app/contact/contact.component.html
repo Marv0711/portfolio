@@ -12,16 +12,26 @@
     </div>
     <div class="contact-form">
         <form onsubmit="; return false;">
-            <div><input type="text" placeholder="Your name"></div>
-            <div><input type="email" placeholder="Your email"></div>
+            <div class="input-container">
+                <input (focus)="checkInput($event, 'showIconName')" (input)="checkInput($event, 'showIconName')" type="text" placeholder="Your name" required>
+                <img *ngIf="showIconName" src="assets/img/error.svg" alt="">
+                <img *ngIf="!showIconName && nameFirstClick" src="assets/img/ok.svg" alt="">
+            </div>
+            <div class="input-container">
+                <input (focus)="checkInput($event, 'showIconEmail')" (input)="checkInput($event, 'showIconEmail')" required type="email" placeholder="Your email">
+                <img *ngIf="showIconEmail" src="assets/img/error.svg" alt="">
+                <img *ngIf="!showIconEmail  && EmailFirstClick" src="assets/img/ok.svg" alt="">
+            </div>
             <div class="textarea-container">
-                <textarea type="text" placeholder="Your message"></textarea>
+                <textarea (focus)="checkInput($event, 'showIconMessage')" (input)="checkInput($event, 'showIconMessage')" required type="text" placeholder="Your message"></textarea>
+                <img *ngIf="showIconMessage" src="assets/img/error.svg" alt="">
+                <img *ngIf="!showIconMessage && MessageFirstClick" src="assets/img/ok.svg" alt="">
                 <div class="resize"></div>
             </div>
             <div class="box-button-container">
                 <div class="box-text-container">
                     <div>
-                        <img src="assets/img/box.svg" alt="">
+                        <img class="box-img" *ngIf="!checkboxClicked" src="assets/img/box.svg" alt="">
                     </div>
                     <div class="text-container">
                         <p class="normal-text">I've read the&nbsp;</p><a href="">privacy policy</a><p class="normal-text">&nbsp;and agree to the processing of my data as outlined.</p></div>
