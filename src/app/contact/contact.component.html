@@ -12,17 +12,17 @@
     </div>
     <div class="contact-form">
         <form onsubmit="; return false;">
-            <div class="input-container">
+            <div id="input-name" class="input-container">
                 <input (focus)="checkInput($event, 'showIconName')" (input)="checkInput($event, 'showIconName')" type="text" placeholder="Your name" required>
                 <img *ngIf="showIconName && nameFirstClick" src="assets/img/error.svg" alt="">
                 <img *ngIf="!showIconName && nameFirstClick" src="assets/img/ok.svg" alt="">
             </div>
-            <div class="input-container">
+            <div id="input-mail" class="input-container">
                 <input (focus)="checkInput($event, 'showIconEmail')" (input)="checkInput($event, 'showIconEmail')" required type="email" placeholder="Your email">
                 <img *ngIf="showIconEmail && EmailFirstClick" src="assets/img/error.svg" alt="">
                 <img *ngIf="!showIconEmail && EmailFirstClick" src="assets/img/ok.svg" alt="">
             </div>
-            <div class="textarea-container">
+            <div id="input-message" class="textarea-container">
                 <textarea (focus)="checkInput($event, 'showIconMessage')" (input)="checkInput($event, 'showIconMessage')" required type="text" placeholder="Your message"></textarea>
                 <img *ngIf="showIconMessage && MessageFirstClick" src="assets/img/error.svg" alt="">
                 <img *ngIf="!showIconMessage && MessageFirstClick" src="assets/img/ok.svg" alt="">
@@ -40,7 +40,7 @@
                 <div><button class="disable-design" id="sendMessageButton" [disabled]="isButtonDisabled">Send message :&#41;</button></div>
             </div>
         </form>
-        <div class="arrow-over-container"><img class="arrow-up-container"src="/assets/img/arrow-up-line.svg" alt=""></div>
+        <div class="arrow-over-container"><img (click)="up()" (mouseleave)="swapImgBack()" (mouseenter)="swapImg()" id="arrow-up" class="arrow-up-container"src="/assets/img/arrow-up-line.svg" alt=""></div>
         <img class="shadow" src="assets/img/contact-shadow.svg" alt="">
     </div>
 </div>

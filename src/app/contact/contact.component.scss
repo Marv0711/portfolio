@@ -72,6 +72,10 @@
     border: 1px solid var(--Style-1-Syle-1-a---green-purple-PURPLE, #E61C40) !important;
 }
 
+.rightInput {
+    border: 1px solid var(--Style-1-Syle-1-a---green-purple-Green, #70E61C) !important;
+}
+
 .contact-form {
     display: inline-flex;
     flex-direction: column;
@@ -280,6 +284,10 @@ button {
 
     border-radius: 41px;
     border: 2px solid var(--White, #FFF);
+
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 .box-img{

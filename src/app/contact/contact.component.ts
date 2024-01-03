@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser'
 
 
@@ -11,66 +11,108 @@ import { BrowserModule } from '@angular/platform-browser'
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
-export class ContactComponent{
- showIconName = true;
- showIconEmail = true;
- showIconMessage = true;
- nameFirstClick = false;
- EmailFirstClick = false;
- MessageFirstClick = false;
- checkboxClicked = false;
+export class ContactComponent {
+  showIconName = true;
+  showIconEmail = true;
+  showIconMessage = true;
+  nameFirstClick = false;
+  EmailFirstClick = false;
+  MessageFirstClick = false;
+  checkboxClicked = false;
 
- isButtonDisabled = true;
+  isButtonDisabled = true;
 
- buttonActiv(){
-  let button = document.getElementById('sendMessageButton');
-  this.isButtonDisabled=!this.isButtonDisabled
+  buttonActiv() {
+    let button = document.getElementById('sendMessageButton');
+    this.isButtonDisabled = !this.isButtonDisabled
 
-  if(!this.isButtonDisabled && !this.showIconName && !this.showIconEmail && !this.showIconMessage){
-    button?.classList.remove('disable-design')
+    if (!this.isButtonDisabled && !this.showIconName && !this.showIconEmail && !this.showIconMessage) {
+      button?.classList.remove('disable-design')
+    }
+
+    else if (this.isButtonDisabled || this.showIconName || this.showIconEmail || this.showIconMessage) {
+      button?.classList.add('disable-design')
+    }
+
   }
 
-  else if(this.isButtonDisabled || this.showIconName || this.showIconEmail || this.showIconMessage){
-    button?.classList.add('disable-design')
-  }
 
- }
-
-
- checkInput(inputfield:any, showIcon:string){
+  checkInput(inputfield: any, showIcon: string) {
     let activInputfield = inputfield.target as HTMLInputElement;
     let isInputEmpty = activInputfield.value.length <= 0;
 
     switch (showIcon) {
       case 'showIconName':
-        this.showIconName = isInputEmpty;
-        this.nameFirstClick = true;
+        if(isInputEmpty){
+          this.showIconName = isInputEmpty;
+          this.nameFirstClick = true;
+          document.getElementById('input-name')?.classList.add('falseInput');
+          document.getElementById('input-name')?.classList.remove('rightInput');
+        }
+        else if(!isInputEmpty){
+          this.showIconName = isInputEmpty;
+          this.nameFirstClick = true;
+          document.getElementById('input-name')?.classList.remove('falseInput');
+          document.getElementById('input-name')?.classList.add('rightInput');
+        }
         break;
       case 'showIconEmail':
-        if(activInputfield.value.includes('@')){
-          this.showIconEmail = false;
-          this.EmailFirstClick = true;
+        if (activInputfield.value.includes('@')) {
+          let atIndex = activInputfield.value.indexOf('@');
+          this.controlAtPosition(atIndex, activInputfield);
         }
-        else{
+        else {
           this.showIconEmail = true;
           this.EmailFirstClick = true;
+          document.getElementById('input-mail')?.classList.add('falseInput');
         }
         break;
       case 'showIconMessage':
         this.showIconMessage = isInputEmpty;
         this.MessageFirstClick = true;
+        document.getElementById('input-message')?.classList.add('falseInput');
         break;
     }
-    this.isButtonDisabled=!this.isButtonDisabled
+    this.isButtonDisabled = !this.isButtonDisabled
     this.buttonActiv();
- }
+  }
 
- checkBoxCklick(){
-  if(this.checkboxClicked){
-    this.checkboxClicked = false;
+  controlAtPosition(atIndex:number, activInputfield:HTMLInputElement){
+    if (atIndex < activInputfield.value.length - 1) {
+      this.showIconEmail = false;
+      this.EmailFirstClick = true;
+      document.getElementById('input-mail')?.classList.add('falseInput');
+    }
+    else {
+      this.showIconEmail = true;
+      this.EmailFirstClick = true;
+    }
   }
-  else{
-    this.checkboxClicked = true;
+
+  checkBoxCklick() {
+    if (this.checkboxClicked) {
+      this.checkboxClicked = false;
+    }
+    else {
+      this.checkboxClicked = true;
+    }
   }
- }
+
+  swapImg(){
+    let picture = document.getElementById('arrow-up') as HTMLImageElement;
+    picture.src = "assets/img/arrow-up-lineGreen.svg";
+    picture.style.border = '2px solid var(--White, #70E61C)';
+  }
+
+  swapImgBack(){
+    let picture = document.getElementById('arrow-up') as HTMLImageElement;
+    picture.src = "assets/img/arrow-up-line.svg";
+    picture.style.border = '2px solid var(--White, #FFF)';
+  }
+
+  up(){
+    window.scrollTo({
+      top: 0,
+    });
+  }
 }
