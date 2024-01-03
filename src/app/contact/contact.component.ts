@@ -12,19 +12,34 @@ import { BrowserModule } from '@angular/platform-browser'
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent{
- showIconName = false;
- showIconEmail = false;
- showIconMessage = false;
+ showIconName = true;
+ showIconEmail = true;
+ showIconMessage = true;
  nameFirstClick = false;
  EmailFirstClick = false;
  MessageFirstClick = false;
  checkboxClicked = false;
 
+ isButtonDisabled = true;
+
+ buttonActiv(){
+  let button = document.getElementById('sendMessageButton');
+  this.isButtonDisabled=!this.isButtonDisabled
+
+  if(!this.isButtonDisabled && !this.showIconName && !this.showIconEmail && !this.showIconMessage){
+    button?.classList.remove('disable-design')
+  }
+
+  else if(this.isButtonDisabled || this.showIconName || this.showIconEmail || this.showIconMessage){
+    button?.classList.add('disable-design')
+  }
+
+ }
+
 
  checkInput(inputfield:any, showIcon:string){
     let activInputfield = inputfield.target as HTMLInputElement;
     let isInputEmpty = activInputfield.value.length <= 0;
-    
 
     switch (showIcon) {
       case 'showIconName':
@@ -38,7 +53,7 @@ export class ContactComponent{
         }
         else{
           this.showIconEmail = true;
-          this.EmailFirstClick = false;
+          this.EmailFirstClick = true;
         }
         break;
       case 'showIconMessage':
@@ -46,5 +61,16 @@ export class ContactComponent{
         this.MessageFirstClick = true;
         break;
     }
+    this.isButtonDisabled=!this.isButtonDisabled
+    this.buttonActiv();
+ }
+
+ checkBoxCklick(){
+  if(this.checkboxClicked){
+    this.checkboxClicked = false;
+  }
+  else{
+    this.checkboxClicked = true;
+  }
  }
 }
