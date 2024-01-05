@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Injectable, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser'
@@ -11,6 +11,11 @@ import { BrowserModule } from '@angular/platform-browser'
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
+
+@Injectable({
+  providedIn: 'root'
+})
+
 export class ContactComponent {
   showIconName = true;
   showIconEmail = true;
@@ -138,7 +143,7 @@ export class ContactComponent {
     picture.style.border = '2px solid var(--White, #FFF)';
   }
 
-  up() {
+  public up() {
     window.scrollTo({
       top: 0,
     });

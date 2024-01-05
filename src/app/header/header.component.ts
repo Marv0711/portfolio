@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ContactComponent } from "../contact/contact.component";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, ContactComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  constructor(public contact: ContactComponent){}
 
   activButton(button: MouseEvent){
     let oldButton = document.querySelectorAll('.activ-button');
@@ -21,5 +23,9 @@ export class HeaderComponent {
 
     let activButton = button.target as HTMLElement;
     activButton?.classList.add('activ-button')
+  }
+
+  up(){
+    this.contact.up();
   }
 }
