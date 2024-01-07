@@ -1,18 +1,39 @@
 .hero-page {
     display: flex;
     align-items: center;
+
+    @media(max-width: 1500px) {
+        flex-direction: column;
+    }
+}
+
+.img-container{
+    @media(max-width: 680px) {
+        background-image: url('/assets/img/photo-shadows.png');
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 600px;
+    }
 }
 
 .purble-shadow-img {
     width: 407px;
     height: 608px;
-
+    filter: blur(11.5px);
+    @media(max-width: 680px) {
+        display: none;
+    }
 }
 
 .green-shadow-img {
-    width: 521.78px;
+    width: 456px;
     margin-left: -200px;
     filter: blur(5.5px);
+
+    @media(max-width: 680px) {
+        display: none;
+    }
 }
 
 .hero-img {
@@ -22,6 +43,27 @@
     z-index: 1;
     left: 0px;
     top: 100px;
+
+    @media(max-width: 1500px) {
+        left: 30%;
+        top: 0px;
+        height: 690px;
+        width: 456px;
+    }
+    @media(max-width: 935px) {
+        left: 20%;
+    }
+    @media(max-width: 746px) {
+        left: 11%;
+    }
+    @media(max-width: 620px) {
+        left: 0%;
+    }
+    @media(max-width: 450px) {
+            top: 175px;
+            height: 449px;
+            width: 300px;
+    }
 }
 
 .button-text-container {
@@ -30,16 +72,27 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media(max-width: 550px) {
+        margin-left: 0px;
+    }
 }
 
 .text-container {
     display: inline-flex;
     align-items: center;
     gap: 35px;
+
+    @media(max-width: 1500px) {
+        margin-top: 22.5px;
+        gap: 10px;
+    }
 }
 
 .i-am-container {
     transform: rotate(-90deg);
+    width: 120px;
+    height: 33px;
 }
 
 .i-am {
@@ -48,13 +101,16 @@
     font-style: normal;
     font-weight: 400;
     color: white;
+
+    @media(max-width: 1500px) {
+        font-size: 32px;
+    }
 }
 
 .name-job-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: -6px;
 }
 
 .name {
@@ -64,6 +120,10 @@
     font-style: normal;
     font-weight: 700;
     line-height: 120%;
+
+    @media(max-width: 1500px) {
+        font-size: 45px;
+    }
 }
 
 .job {
@@ -73,6 +133,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
+
+    @media(max-width: 1500px) {
+        font-size: 29px;
+    }
 }
 
 button {
