@@ -28,4 +28,9 @@ export class HeaderComponent {
   up(){
     this.contact.up();
   }
+
+  openMenu(){
+    let menu = document.getElementById('menu');
+    menu?.classList.toggle('open');
+  }
 }

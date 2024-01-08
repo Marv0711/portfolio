@@ -11,4 +11,8 @@ app-header {
     top: 0;
     background-color: #141D2F;
     z-index: 2;
+
+    @media(max-width: 620px) {
+        padding: 37px 10px;
+    }
 }

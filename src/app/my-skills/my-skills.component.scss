@@ -2,6 +2,14 @@
     padding-left: 85px;
     margin-top: 150px;
     display: flex;
+
+    @media(max-width: 1430px) {
+        flex-direction: column-reverse;
+    }
+
+    @media(max-width: 690px) {
+        padding-left: 10px;
+    }
 }
 
 .allIcons-container {
@@ -10,12 +18,43 @@
     align-items: flex-start;
     gap: 54px;
 
+    @media(max-width: 620px) {
+        gap: 17px;
+    }
+
 }
 
 .icon-row {
     display: flex;
     align-items: flex-start;
     gap: 123px;
+
+    @media(max-width: 830px) {
+        display: none;
+    }
+}
+
+.icon-row-mobile {
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    width: 340px;
+    gap: 56px;
+
+    @media(max-width: 830px) {
+        display: flex;
+    }
+}
+
+.icon-row-mobile2 {
+    display: none;
+    align-items: flex-start;
+    width: 340px;
+    gap: 74px;
+
+    @media(max-width: 830px) {
+        display: flex;
+    }
 }
 
 .icon-container {
@@ -26,7 +65,7 @@
     align-items: center;
     gap: 10px;
 
-    &:hover{
+    &:hover {
         animation: toggle 1s ease-in-out;
     }
 }
@@ -38,6 +77,10 @@
     font-style: normal;
     font-weight: 700;
     line-height: 120%;
+
+    @media(max-width: 830px) {
+        font-size: 14px;
+    }
 }
 
 .shadow-img {
@@ -57,6 +100,10 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+
+    @media(max-width: 1430px) {
+        align-items: flex-start;
+    }
 }
 
 .text-container {
@@ -64,6 +111,10 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 34px;
+
+    @media(max-width: 1430px) {
+        align-items: flex-start;
+    }
 }
 
 .skill-headline {
@@ -77,14 +128,18 @@
 
     display: flex;
     align-items: center;
+
+    @media(max-width: 620px) {
+        font-size: 45px;
+    }
 }
 
-.vector-container{
+.vector-container {
     display: flex;
     position: absolute;
     right: 0;
 
-    img{
+    img {
         width: 58px;
         flex-shrink: 0;
     }
@@ -100,10 +155,20 @@
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
+
+    @media(max-width: 620px) {
+        text-align: left;
+        width: 338px;
+    }
 }
 
 .button-container {
     margin-top: 60px;
+
+    @media(max-width: 1430px) {
+        margin-top: 0px;
+        margin-bottom: 60px;
+    }
 
     button {
         display: inline-flex;
@@ -123,7 +188,7 @@
         line-height: 120%;
         border: none;
 
-        &:hover{
+        &:hover {
             background: #9747FF;
             cursor: pointer;
             transform: scale(1.1);
@@ -136,14 +201,17 @@
         0% {
             transform: translateY(0);
         }
+
         25% {
             transform: translateY(-10px);
         }
+
         50% {
             transform: translateY(-5px);
         }
+
         75% {
             transform: translateY(-15px);
         }
-      }
+    }
 }
